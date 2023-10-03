@@ -1,3 +1,4 @@
+/* BEGIN LAYOUT */
 html {
   font-size: 14px;
 }
@@ -14,13 +15,14 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 15px 0px 15px 0px;
+    background-color: #effeff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .fixed-bottom a.btn {
-    flex: 1; /* equally distribute the width among the buttons */
-    text-align: center; /* center the icon and text */
-    padding: 10px; /* increase the touch area */
+    flex: 1;
+    text-align: center;
 }
 
 .fixed-bottom i.fas {
@@ -29,7 +31,7 @@ body {
 
 #navbar {
     background-color: #3C979F !important;
-    padding: 20px 10px 20px 10px;
+    padding: 25px 10px 25px 10px;
 }
 
 .navbar a {
@@ -46,3 +48,48 @@ body {
 .navbar i.active {
     color: white;
 }
+
+/* END LAYOUT */
+
+/* BEGIN HOME */
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.home-header h1 {
+    font-weight: bold;
+}
+
+.home-header {
+    color: #212121;
+}
+
+/* END HOME */
+
+/* BEGIN WORKOUT */
+
+.workout-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: #212121;
+}
+
+.workout-header-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workout-header-btns i {
+    padding: 0px 10px 0px 10px;
+}
+
+/* END WORKOUT */
+
+/* BEGIN COMPETE */
+
+/* END COMPETE */
