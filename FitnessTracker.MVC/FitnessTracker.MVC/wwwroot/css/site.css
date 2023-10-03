@@ -16,3 +16,33 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.fixed-bottom a.btn {
+    flex: 1; /* equally distribute the width among the buttons */
+    text-align: center; /* center the icon and text */
+    padding: 10px; /* increase the touch area */
+}
+
+.fixed-bottom i.fas {
+    margin-right: 5px; /* give some space between the icon and the text */
+}
+
+#navbar {
+    background-color: #3C979F !important;
+    padding: 20px 10px 20px 10px;
+}
+
+.navbar a {
+    justify-content: center;
+    margin: 0px;
+    border: none;
+    background-color: #3C979F;
+}
+
+.navbar i {
+    color: #212121;
+}
+
+.navbar i.active {
+    color: white;
+}

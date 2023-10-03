@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace FitnessTracker.MVC.Controllers
 {
-    public class HomeController : Controller
+    public class WorkoutController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<WorkoutController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public WorkoutController(ILogger<WorkoutController> logger)
         {
             _logger = logger;
         }

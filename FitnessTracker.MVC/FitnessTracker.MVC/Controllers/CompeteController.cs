@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace FitnessTracker.MVC.Controllers
 {
-    public class HomeController : Controller
+    public class CompeteController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<CompeteController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public CompeteController(ILogger<CompeteController> logger)
         {
             _logger = logger;
         }
@@ -23,5 +23,6 @@ namespace FitnessTracker.MVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
