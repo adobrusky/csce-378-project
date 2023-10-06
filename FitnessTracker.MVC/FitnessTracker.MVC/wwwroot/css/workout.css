@@ -1,0 +1,20 @@
+﻿/* BEGIN WORKOUT */
+
+.workout-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: #212121;
+}
+
+.workout-header-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .workout-header-btns i {
+        padding: 0px 10px 0px 10px;
+    }
+
+/* END WORKOUT */

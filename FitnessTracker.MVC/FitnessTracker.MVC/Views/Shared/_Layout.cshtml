@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FitnessTracker.MVC.styles.css" asp-append-version="true" />
+    @await RenderSectionAsync("css", required: false)
 </head>
 <body>
     <header>
