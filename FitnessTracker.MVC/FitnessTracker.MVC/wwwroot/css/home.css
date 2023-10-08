@@ -1,35 +1,46 @@
 ﻿/* BEGIN HOME */
 
 .home-header {
+    color: #212121;
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
 
-.home-header h1 {
-    font-weight: bold;
+.home-header h3 {
+    color: #8696BB;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
 }
 
-.home-header {
-    color: #212121;
+.home-header h1 {
+    color: #0D1B34;
+    font-family: Poppins;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 38.5px */
 }
 
 .workout {
+    align-items: center;
+    background-color: white;
+    border-radius: 10px 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-around;
-    background-color: white;
-    align-items: center;
-    border-radius: 10px 10px;
     margin: 0px 15px 0px 15px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .calendar-icon {
-    height: 61px;
-    width: 61px;
-    padding-left: 23px;
-    margin-right: -10px;
     flex-grow: 1;
+    height: 61px;
+    margin-right: -10px;
+    padding-left: 23px;
+    width: 61px;
 }
 
 .workout > .workout-list {
@@ -38,40 +49,40 @@
 }
 
 .workout .workout-list > h3 {
-    font-weight: 600;
     font-size: 17px;
+    font-weight: 600;
 }
 
 .workout .workout-list ul {
-    font-weight: 600;
-    font-size: 12px;
-    border-radius: 10px 10px;
     background-color: #d7d7d7;
+    border-radius: 10px 10px;
+    font-size: 12px;
+    font-weight: 600;
 }
 
 .weekly-status > h1 {
     display: flex;
-    justify-content: space-between;
-    padding: 35px 20px 10px 20px;
     font-size: 30px;
     font-weight: bold;
+    justify-content: space-between;
+    padding: 35px 20px 10px 20px;
 }
 
 .weekly-status-boxes-container {
+    align-items: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
 .weekly-status-main-box {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     background-color: white;
     border-radius: 10px 10px;
-    width: 149px;
-    height: 186px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    height: 186px;
+    width: 149px;
 }
 
 .weekly-status-main-box > h4 {
@@ -93,31 +104,31 @@
 
 .weekly-status-main-box > h3 {
     color: #AECFD0;
-    text-align: center;
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    text-align: center;
 }
 
 .weekly-status-sub-boxes-container {
+    align-items: center;
     display: flex;
     flex-direction: column;
+    height: 186px;
     justify-content: space-between;
     width: 149px;
-    height: 186px;
-    align-items: center;
 }
 
 .weekly-status-sub-box {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     background-color: white;
     border-radius: 10px 10px;
-    width: 157px;
-    height: 89px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    height: 89px;
+    width: 157px;
 }
 
 .weekly-status-sub-box > h4 {
@@ -131,22 +142,22 @@
 
 .weekly-status-sub-box > h1 {
     color: #3C979F;
-    text-align: center;
     font-family: Nunito;
     font-size: 35px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     margin-bottom: -5px;
+    text-align: center;
 }
 
 .weekly-status-sub-box > h3 {
     color: #AECFD0;
-    text-align: center;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    }
+    text-align: center;
+}
 
 /* END HOME */
