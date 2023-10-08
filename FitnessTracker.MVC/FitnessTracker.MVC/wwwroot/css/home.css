@@ -21,9 +21,19 @@
     align-items: center;
     border-radius: 10px 10px;
     margin: 0px 15px 0px 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.calendar-icon {
+    height: 61px;
+    width: 61px;
+    padding-left: 23px;
+    margin-right: -30px;
+    flex-grow: 1;
 }
 
 .workout > .workout-list {
+    flex-grow: 2;
     padding: 5px;
 }
 
@@ -38,5 +48,105 @@
     border-radius: 10px 10px;
     background-color: #d7d7d7;
 }
+
+.weekly-status > h1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px 20px 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.weekly-status-boxes-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.weekly-status-main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px 10px;
+    width: 149px;
+    height: 186px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.weekly-status-main-box > h4 {
+    color: black;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.weekly-status-main-box > h1 {
+    color: #3C979F;
+    font-family: Nunito;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.weekly-status-main-box > h3 {
+    color: #AECFD0;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.weekly-status-sub-boxes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 149px;
+    height: 186px;
+    align-items: center;
+}
+
+.weekly-status-sub-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px 10px;
+    width: 157px;
+    height: 89px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.weekly-status-sub-box > h4 {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0px;
+}
+
+.weekly-status-sub-box > h1 {
+    color: #3C979F;
+    text-align: center;
+    font-family: Nunito;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: -5px;
+}
+
+.weekly-status-sub-box > h3 {
+    color: #AECFD0;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    }
 
 /* END HOME */
