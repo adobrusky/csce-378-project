@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Add Workout";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/css/workout.css" asp-append-version="true" />
+}
+
+<div>
+    <i></i> <!-- Add back icon here -->
+    <h4>Return to Workouts</h4>
+</div>
+
+<div>
+    <h1>Add Workout</h1>
+    <a asp-controller="Workout" asp-action="AddExistingWorkout">Add Existing Workout</a>
+    <a asp-controller="Workout" asp-action="CreateWorkout">Create a New Workout</a>
+</div>

@@ -2,15 +2,15 @@
 {
     public class WorkoutModel
     {
-        string Name { get; set; } = String.Empty;
-        string Category { get; set; } = String.Empty;
-        DateTime? Date { get; set; }
-        List<ExerciseModel> Exercises { get; set; } = new List<ExerciseModel>();
+        public string Name { get; set; } = String.Empty;
+        public string Category { get; set; } = String.Empty;
+        public DateTime? Date { get; set; }
+        public List<ExerciseModel> Exercises { get; set; } = new List<ExerciseModel>();
     }
 
     public class ExerciseModel
     {
-        string Name { get; set; } = String.Empty;
-        string MetricToMeasure { get; set; } = String.Empty;
+        public string Name { get; set; } = String.Empty;
+        public string MetricToMeasure { get; set; } = String.Empty;
     }
 }
