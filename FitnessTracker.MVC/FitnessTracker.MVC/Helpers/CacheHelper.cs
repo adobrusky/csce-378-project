@@ -145,6 +145,12 @@ namespace FitnessTracker.MVC.Helpers
             return _cache.Get<List<WorkoutModel>>(MyWorkoutsCacheKey).Select(x => x.Clone()).ToList();
         }
 
+        public List<WorkoutModel> GetMyWorkoutsByDate(DateTime dDate)
+        {
+            return _cache.Get<List<WorkoutModel>>(MyWorkoutsCacheKey).Where(x => x.Date == dDate).Select(x => x.Clone()).ToList();
+        }
+
+
         public void AddWorkoutToExistingWorkouts(WorkoutModel oWorkout)
         {
             List<WorkoutModel> lstWorkouts = GetWorkoutsByCategory(oWorkout.Category);

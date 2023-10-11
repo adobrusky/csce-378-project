@@ -18,9 +18,11 @@ namespace FitnessTracker.MVC.Controllers
 
         public IActionResult Index()
         {
-            List<WorkoutModel> lstMyWorkouts = _cacheHelper.GetMyWorkouts();
-            return View(lstMyWorkouts);
+            List<WorkoutModel> allWorkouts = _cacheHelper.GetMyWorkouts();
+            var distinctDates = allWorkouts.Where(w => w.Date.HasValue).Select(x => x.Date.Value).Distinct().OrderBy(d => d).ToList();
+            return View(distinctDates);
         }
+
 
         public IActionResult AddWorkout()
         {
@@ -53,6 +55,7 @@ namespace FitnessTracker.MVC.Controllers
         public IActionResult AddWorkoutToMyWorkouts(string workoutName, string category, DateTime workoutDate)
         {
             _cacheHelper.AddWorkoutToMyWorkouts(workoutName, category, workoutDate);
+            TempData["SuccessMessage"] = "Workout successfully saved to my workouts!";
             return RedirectToAction("Index");
         }
 
@@ -66,7 +69,15 @@ namespace FitnessTracker.MVC.Controllers
         public IActionResult SaveWorkout(WorkoutModel oWorkout)
         {
             _cacheHelper.AddWorkoutToExistingWorkouts(oWorkout);
+            TempData["SuccessMessage"] = "Workout successfully saved to existing workouts!";
             return RedirectToAction("AddWorkout");
+        }
+
+        public IActionResult WorkoutsByDate(DateTime date)
+        {
+            List<WorkoutModel> lstWorkoutsByDate = _cacheHelper.GetMyWorkoutsByDate(date);
+            ViewBag.Date = date;
+            return View(lstWorkoutsByDate);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

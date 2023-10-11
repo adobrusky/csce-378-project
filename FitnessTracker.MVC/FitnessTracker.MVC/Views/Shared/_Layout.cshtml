@@ -22,13 +22,13 @@
         <div id="navbar" class="navbar fixed-bottom navbar-light bg-light">
             <div class="container">
                 <div class="d-flex justify-content-between w-100">
-                    <a class="btn d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <a class="btn d-flex align-items-center" href="@Url.Action("Index", "Home")">
                         <i class="fas fa-home fa-xl @(currentController == "Home" ? "active" : "")"></i>
                     </a>
-                    <a class="btn d-flex align-items-center" asp-controller="Workout" asp-action="Index">
+                    <a class="btn d-flex align-items-center" href="@Url.Action("Index", "Workout")">
                         <i class="fa fa-calendar fa-xl @(currentController == "Workout" ? "active" : "")"></i>
                     </a>
-                    <a class="btn d-flex align-items-center" asp-controller="Compete" asp-action="Index">
+                    <a class="btn d-flex align-items-center" href="@Url.Action("Index", "Compete")">
                         <i class="fa-solid fa-chart-simple fa-xl  @(currentController == "Compete" ? "active" : "")"></i>
                     </a>
                     <!-- We don't need this to link to anything for any of our tasks -->

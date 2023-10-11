@@ -49,4 +49,19 @@ body {
     color: white;
 }
 
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back svg {
+    width: 30px;
+}
+
+.back a {
+    text-decoration: none;
+    margin: 0px;
+}
+
 /* END LAYOUT */

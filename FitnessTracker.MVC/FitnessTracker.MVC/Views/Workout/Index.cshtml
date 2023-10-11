@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="~/css/workout.css" asp-append-version="true" />
 }
 
-@model List<WorkoutModel>
+@model List<DateTime>
 
 <div class="workout-header">
     <h1 style="font-weight: bold; font-size:27px;">My Workouts</h1>
@@ -16,22 +16,25 @@
     </div>
 </div>
 
-@if(Model != null && Model.Count > 0) {
-    @foreach (WorkoutModel workout in Model)
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var date in Model)
     {
         <div class="workout-list">
-            <h3>@workout.Date?.ToString("dddd, MMMM dd")</h3>
-            <div>
-                <ul>
-                    @foreach (ExerciseModel exercise in workout.Exercises)
-                    {
-                        <li>@exercise.Name</li>
-                    }
-                </ul>
-            </div>
+            <h3><a href="@Url.Action("WorkoutsByDate", "Workout", new { date = date })">@date.ToString("dddd, MMMM dd")</a></h3>
         </div>
     }
-} else {
+}
+else
+{
     <h3>No workouts to display.</h3>
 }
 
