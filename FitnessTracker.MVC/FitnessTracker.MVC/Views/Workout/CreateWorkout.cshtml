@@ -1,0 +1,59 @@
+﻿@model WorkoutModel
+@{
+    ViewData["Title"] = "Create Workout";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/css/workout.css" asp-append-version="true" />
+}
+
+<h1>Create Workout</h1>
+
+<form method="post" action="@Url.Action("SaveWorkout", "Workout")">
+    <div>
+        <label for="category">Category:</label>
+        <select id="category" name="Category">
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option value="@category">@category</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <label for="name">Workout Name:</label>
+        <input type="text" id="name" name="Name" required />
+    </div>
+
+    <div id="exercises">
+        <div class="exercise">
+            <h4>Exercise #1</h4>
+            <label for="exerciseName1">Name:</label>
+            <input type="text" id="exerciseName1" name="Exercises[0].Name" required />
+            <label for="metricToMeasure1">Metric To Measure:</label>
+            <input type="text" id="metricToMeasure1" name="Exercises[0].MetricToMeasure" required />
+        </div>
+    </div>
+
+    <button type="button" id="addExercise">Add Another Exercise</button>
+    <button type="submit">Save Workout</button>
+</form>
+
+@section scripts{
+    <script>
+        let exerciseCount = 1;
+        document.getElementById("addExercise").addEventListener("click", function () {
+            exerciseCount++;
+            const exerciseDiv = document.createElement("div");
+            exerciseDiv.classList.add("exercise");
+            exerciseDiv.innerHTML = `
+                <h4>Exercise #${exerciseCount}</h4>
+                <label for="exerciseName${exerciseCount}">Name:</label>
+                <input type="text" id="exerciseName${exerciseCount}" name="Exercises[${exerciseCount - 1}].Name" required />
+                <label for="metricToMeasure${exerciseCount}">Metric To Measure:</label>
+                <input type="text" id="metricToMeasure${exerciseCount}" name="Exercises[${exerciseCount - 1}].MetricToMeasure" required />
+            `;
+            document.getElementById("exercises").appendChild(exerciseDiv);
+        });
+    </script>
+}

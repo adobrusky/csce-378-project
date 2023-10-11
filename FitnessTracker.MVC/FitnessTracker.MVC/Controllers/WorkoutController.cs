@@ -18,7 +18,8 @@ namespace FitnessTracker.MVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<WorkoutModel> lstMyWorkouts = _cacheHelper.GetMyWorkouts();
+            return View(lstMyWorkouts);
         }
 
         public IActionResult AddWorkout()
@@ -40,8 +41,12 @@ namespace FitnessTracker.MVC.Controllers
         }
         public IActionResult WorkoutDetails(string workoutName, string category)
         {
-            WorkoutModel workout = _cacheHelper.GetWorkoutByNameAndCategory(workoutName, category);
-            return View(workout);
+            WorkoutModel? oWorkout = _cacheHelper.GetWorkoutByNameAndCategory(workoutName, category);
+            if (oWorkout != null)
+            {
+                return View(oWorkout);
+            }
+            return RedirectToAction("ViewWorkoutsForCategory", new { category = category });
         }
 
         [HttpPost]
@@ -49,6 +54,19 @@ namespace FitnessTracker.MVC.Controllers
         {
             _cacheHelper.AddWorkoutToMyWorkouts(workoutName, category, workoutDate);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult CreateWorkout()
+        {
+            ViewBag.Categories = _cacheHelper.GetCategories();
+            return View(new WorkoutModel());
+        }
+
+        [HttpPost]
+        public IActionResult SaveWorkout(WorkoutModel oWorkout)
+        {
+            _cacheHelper.AddWorkoutToExistingWorkouts(oWorkout);
+            return RedirectToAction("AddWorkout");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

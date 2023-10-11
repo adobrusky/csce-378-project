@@ -9,10 +9,9 @@ namespace FitnessTracker.MVC.Helpers
     {
         private readonly IMemoryCache _cache;
 
-        // Define a cache key
-        public string ExistingWorkoutsCacheKey(string sCategory) => $"ExistingWorkouts_{sCategory}";
-        public const string CategoriesCacheKey = $"WorkoutCategories";
-        public const string MyWorkoutsCacheKey = $"MyWorkouts";
+        private string ExistingWorkoutsCacheKey(string sCategory) => $"ExistingWorkouts_{sCategory}";
+        private const string CategoriesCacheKey = $"WorkoutCategories";
+        private const string MyWorkoutsCacheKey = $"MyWorkouts";
 
         public CacheHelper(IMemoryCache cache)
         {
@@ -133,7 +132,7 @@ namespace FitnessTracker.MVC.Helpers
 
         public List<WorkoutModel> GetWorkoutsByCategory(string sCategory)
         {
-            return _cache.Get<List<WorkoutModel>>(ExistingWorkoutsCacheKey(sCategory));
+            return _cache.Get<List<WorkoutModel>>(ExistingWorkoutsCacheKey(sCategory)).Select(x => x.Clone()).ToList();
         }
 
         public List<string> GetCategories()
@@ -143,7 +142,7 @@ namespace FitnessTracker.MVC.Helpers
 
         public List<WorkoutModel> GetMyWorkouts()
         {
-            return _cache.Get<List<WorkoutModel>>(MyWorkoutsCacheKey);
+            return _cache.Get<List<WorkoutModel>>(MyWorkoutsCacheKey).Select(x => x.Clone()).ToList();
         }
 
         public void AddWorkoutToExistingWorkouts(WorkoutModel oWorkout)
@@ -161,7 +160,7 @@ namespace FitnessTracker.MVC.Helpers
 
         public void AddWorkoutToMyWorkouts(string workoutName, string category, DateTime workoutDate)
         {
-            WorkoutModel oWorkout = GetWorkoutByNameAndCategory(workoutName, category);
+            WorkoutModel? oWorkout = GetWorkoutByNameAndCategory(workoutName, category);
             if (oWorkout != null)
             {
                 oWorkout.Date = workoutDate;
