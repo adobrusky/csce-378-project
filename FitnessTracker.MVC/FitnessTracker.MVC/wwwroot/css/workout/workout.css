@@ -103,8 +103,13 @@
     height: 100%;
     justify-content: center;
     line-height: normal;
+    text-align: center;
     text-decoration: none;
     width: 100%;
+    }
+
+.back > .smaller-text {
+    font-size: 19px;
 }
 
 /* END WORKOUT */
