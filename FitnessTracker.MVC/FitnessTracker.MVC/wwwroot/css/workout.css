@@ -1,20 +1,80 @@
 ﻿/* BEGIN WORKOUT */
 
 .workout-header {
+    color: #212121;
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    color: #212121;
 }
 
 .workout-header-btns {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
-    .workout-header-btns i {
-        padding: 0px 10px 0px 10px;
-    }
+.workout-header-btns i { padding: 0px 10px 0px 10px; }
+
+.workout-list-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.workout-box-first {
+    align-items: center;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 375px;
+}
+
+.workout-box {
+    align-items: center;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    margin-top: 20px;
+    width: 375px;
+}
+
+.calendar-icon {
+    flex: 0.5 auto;
+    height: 61px;
+    padding-left: 23px;
+    width: 61px;
+}
+
+.calendar-icon-current { filter: invert(57%) sepia(15%) saturate(1482%) hue-rotate(136deg) brightness(89%) contrast(86%); }
+
+.workout-list-link {
+    align-items: center;
+    color: #000;
+    flex: auto;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.workout-list-link-current {
+    align-items: center;
+    color: #3C979F;
+    flex: auto;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.a-container { text-decoration: none; }
 
 /* END WORKOUT */
