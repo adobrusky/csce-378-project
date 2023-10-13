@@ -1,0 +1,38 @@
+﻿.add-workout-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.add-workout-title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 20px; /* 57.143% */
+}
+
+.add-workout-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 258px;
+    height: 49px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+}
+
+.workout-link {
+    color: #8696BB;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    text-align: center;
+    text-decoration: none;
+}
