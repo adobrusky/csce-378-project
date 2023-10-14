@@ -1,0 +1,57 @@
+﻿.category-header-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.category-header-box {
+    align-items: center;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    width: 326px;
+}
+
+.category-header-text {
+    color: #3C979F;
+    font-family: Poppins;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.a-container { text-decoration: none; }
+
+.add-workouts-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.add-workout-box {
+    align-items: center;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    height: 49px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 258px;
+}
+
+.add-workout-label {
+    color: #8696BB;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+}

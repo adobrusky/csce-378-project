@@ -4,6 +4,7 @@
 
 @section css{
     <link rel="stylesheet" href="~/css/workout/workout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/workout/workout-details.css" asp-append-version="true" />
 }
 
 @model WorkoutModel
@@ -15,21 +16,32 @@
     </div>
 </div>
 
-<h2>@Model.Name</h2>
+<div class="page-header-container">
+    <h2 class="page-header">@Model.Name</h2>
+</div>
 
-<ul>
-    @foreach (var exercise in Model.Exercises)
-    {
-        <li>
-            @exercise.Name - @exercise.MetricToMeasure
-        </li>
-    }
-</ul>
+<div class="exercises-box-container">
+    <div class="exercises-box">
+        @foreach (var exercise in Model.Exercises)
+        {
+            <div class="exercises-container">
+                <div class="exercise-name">
+                    <p class="exercise-label-text">@exercise.Name</p>
+                </div>
+                <div class="exercise-metric">
+                    <p class="exercise-label-text">@exercise.MetricToMeasure</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
 
-<form method="post" action="@Url.Action("AddWorkoutToMyWorkouts", "Workout")">
-    <input type="hidden" name="workoutName" value="@Model.Name" />
-    <input type="hidden" name="category" value="@Model.Category" />
-    <label for="workoutDate">Date:</label>
-    <input type="date" id="workoutDate" name="workoutDate" required />
-    <button type="submit">Add Workout</button>
-</form>
+<div class="form-container">
+    <form method="post" action="@Url.Action("AddWorkoutToMyWorkouts", "Workout")" class="date-form">
+        <input type="hidden" name="workoutName" value="@Model.Name" />
+        <input type="hidden" name="category" value="@Model.Category" />
+        <label class="workout-date-label" for="workoutDate">Select A Date</label>
+        <input class="date-input-box" type="date" id="workoutDate" name="workoutDate" required />
+        <button class="add-workout-button" type="submit">Add Workout</button>
+    </form>
+</div>

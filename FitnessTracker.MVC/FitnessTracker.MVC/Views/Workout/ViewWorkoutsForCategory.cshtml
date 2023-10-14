@@ -4,6 +4,7 @@
 
 @section css{
     <link rel="stylesheet" href="~/css/workout/workout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/workout/view-workout-for-category.css" asp-append-version="true" />
 }
 
 @model List<WorkoutModel>
@@ -15,13 +16,19 @@
     </div>
 </div>
 
-<h2>@ViewBag.Category Workouts</h2>
+<div class="category-header-container">
+    <div class="category-header-box">
+        <h2 class="category-header-text">@ViewBag.Category <br/>Workouts</h2>
+    </div>
+</div>
 
-<ul>
+<div class="add-workouts-container">
     @foreach (var workout in Model)
     {
-        <li>
-            <a href="@Url.Action("WorkoutDetails", "Workout", new { workoutName = workout.Name, category = ViewBag.Category })">@workout.Name</a>
-        </li>
+        <a class="a-container" href="@Url.Action("WorkoutDetails", "Workout", new { workoutName = workout.Name, category = ViewBag.Category })">
+            <div class="add-workout-box">
+                <h3 class="add-workout-label">@workout.Name</h3>
+            </div>
+        </a>
     }
-</ul>
+</div>

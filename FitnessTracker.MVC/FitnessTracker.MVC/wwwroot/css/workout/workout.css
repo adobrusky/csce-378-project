@@ -58,10 +58,11 @@
     color: #000;
     flex: auto;
     font-family: Poppins;
-    font-size: 21px;
+    font-size: 23px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    text-align: center;
 }
 
 .workout-list-link-current {
@@ -69,10 +70,11 @@
     color: #3C979F;
     flex: auto;
     font-family: Poppins;
-    font-size: 21px;
+    font-size: 23px;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
+    text-align: center;
 }
 
 .a-container { text-decoration: none; }

@@ -1,0 +1,97 @@
+﻿.page-header-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 25px 10px -5px 10px;
+}
+
+.page-header {
+    color: #000;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+}
+
+.exercises-box-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 30px;
+}
+
+.exercises-box {
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 340px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.exercises-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.exercise-label-text {
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    letter-spacing: 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.workout-date-label {
+    color: #3C979F;
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    letter-spacing: 0;
+}
+
+.date-input-box {
+    width: 295px;
+    height: 48px;
+    border: 2px solid #000;
+    background: #AECFD0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.add-workout-button {
+    margin-top: 16px;
+    width: 295px;
+    height: 48px;
+    border-radius: 5px;
+    background: #3C979F;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 95.238% */
+    letter-spacing: -0.5px;
+    border: none;
+    text-align: center;
+}
