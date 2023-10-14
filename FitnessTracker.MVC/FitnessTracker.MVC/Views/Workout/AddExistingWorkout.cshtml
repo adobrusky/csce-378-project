@@ -4,6 +4,7 @@
 
 @section css{
     <link rel="stylesheet" href="~/css/workout/workout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/workout/add-existing-workout.css" asp-append-version="true" />
 }
 
 @model List<string>
@@ -15,13 +16,15 @@
     </div>
 </div>
 
-<h2>Select a Category to Add an Existing Workout</h2>
+<h2 class="page-header">Select a Category to Add an Existing Workout</h2>
 
-<ul>
-    @foreach (var category in Model)
-    {
-        <li>
-            <a href="@Url.Action("ViewWorkoutsForCategory", "Workout", new { category = category })">@category</a>
-        </li>
-    }
-</ul>
+<div class="categories-container">
+        @foreach (var category in Model)
+        {
+            <a class="a-container" href="@Url.Action("ViewWorkoutsForCategory", "Workout", new { category = category })">
+                <div class="category-box">
+                    <h3 class="category-label">@category</h3>
+                </div>
+            </a>
+        }
+</div>
