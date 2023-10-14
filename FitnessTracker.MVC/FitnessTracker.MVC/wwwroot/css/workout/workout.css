@@ -112,4 +112,9 @@
     font-size: 19px;
 }
 
+.success-box-margins {
+    margin-top: 15px;
+    margin-bottom: -30px;
+}
+
 /* END WORKOUT */
