@@ -1,0 +1,181 @@
+﻿.page-header {
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 100% */
+    margin: 23px 0;
+}
+
+.form-container-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 335px;
+    background: #AECFD0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: 2px solid #000;
+    padding: 15px 0;
+}
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#category {
+    width: 296px;
+    height: 35px;
+    border: 1px solid #000;
+    background: white;
+    color: #1f5257;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 111.111% */
+    letter-spacing: -0.5px;
+}
+
+.category-label {
+    color: black;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 105.263% */
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
+}
+
+.workout-name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.workout-name-container > label {
+    color: black;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 105.263% */
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin: 17.5px 0 5px;
+}
+
+.workout-name-container > input {
+    width: 296px;
+    height: 35px;
+    border: 1px solid #000;
+    background: white;
+    color: #1f5257;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 111.111% */
+    letter-spacing: -0.5px;
+}
+
+#exercises {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.exercise {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.exercise-main-label {
+    color: black;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 105.263% */
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin: 35px 0 5px;
+}
+
+.exercise-label {
+    color: #464e4f;
+    font-family: Poppins;
+    font-size: 16.5px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 121.212% */
+    letter-spacing: -0.5px;
+    margin: 10px 0 5px;
+}
+
+.exercise-input {
+    width: 296px;
+    height: 35px;
+    border: 1px solid #000;
+    background: white;
+    color: #1f5257;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 111.111% */
+    letter-spacing: -0.5px;
+}
+
+.add-exercise-button {
+    width: 190px;
+    height: 34px;
+    border-radius: 5px;
+    background: #90EE90;
+    color: #000;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: -0.5px;
+    margin: 15px 0 7.5px;
+}
+
+.save-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 50px;
+}
+
+.save-workout-button {
+    width: 295px;
+    height: 48px;
+    border-radius: 5px;
+    background: #3C979F;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 95.238% */
+    letter-spacing: -0.5px;
+    border: none;
+}

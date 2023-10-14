@@ -5,6 +5,7 @@
 
 @section css{
     <link rel="stylesheet" href="~/css/workout/workout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/workout/create-workout.css" asp-append-version="true" />
 }
 
 <div class="back-container">
@@ -14,37 +15,43 @@
     </div>
 </div>
 
-<h1>Create Workout</h1>
+<h1 class="page-header">Create Workout</h1>
+<div class="form-container-container">
+    <form method="post" action="@Url.Action("SaveWorkout", "Workout")">
+        <div class="form-container">
+            <div class="category-container">
+                <label for="category" class="category-label">Category</label>
+                <select id="category" name="Category">
+                    @foreach (var category in ViewBag.Categories)
+                    {
+                        <option value="@category">@category</option>
+                    }
+                </select>
+            </div>
 
-<form method="post" action="@Url.Action("SaveWorkout", "Workout")">
-    <div>
-        <label for="category">Category:</label>
-        <select id="category" name="Category">
-            @foreach (var category in ViewBag.Categories)
-            {
-                <option value="@category">@category</option>
-            }
-        </select>
-    </div>
+            <div class="workout-name-container">
+                <label for="name">Workout Name:</label>
+                <input type="text" id="name" name="Name" required/>
+            </div>
 
-    <div>
-        <label for="name">Workout Name:</label>
-        <input type="text" id="name" name="Name" required />
-    </div>
+            <div id="exercises">
+                <div class="exercise">
+                    <h4 class="exercise-main-label">Exercise #1</h4>
+                    <label for="exerciseName1" class="exercise-label">Name:</label>
+                    <input type="text" id="exerciseName1" name="Exercises[0].Name" class="exercise-input" required/>
+                    <label for="metricToMeasure1" class="exercise-label">Metric To Measure:</label>
+                    <input type="text" id="metricToMeasure1" name="Exercises[0].MetricToMeasure" class="exercise-input" required/>
+                </div>
+            </div>
 
-    <div id="exercises">
-        <div class="exercise">
-            <h4>Exercise #1</h4>
-            <label for="exerciseName1">Name:</label>
-            <input type="text" id="exerciseName1" name="Exercises[0].Name" required />
-            <label for="metricToMeasure1">Metric To Measure:</label>
-            <input type="text" id="metricToMeasure1" name="Exercises[0].MetricToMeasure" required />
+            <button class="add-exercise-button" type="button" id="addExercise">Add Another Exercise</button>
+            
         </div>
-    </div>
-
-    <button type="button" id="addExercise">Add Another Exercise</button>
-    <button type="submit">Save Workout</button>
-</form>
+        <div class="save-button-container">
+            <button class="save-workout-button" type="submit">Save Workout</button>
+        </div>
+    </form>
+</div>
 
 @section scripts{
     <script>
@@ -54,11 +61,12 @@
             const exerciseDiv = document.createElement("div");
             exerciseDiv.classList.add("exercise");
             exerciseDiv.innerHTML = `
-                <h4>Exercise #${exerciseCount}</h4>
-                <label for="exerciseName${exerciseCount}">Name:</label>
-                <input type="text" id="exerciseName${exerciseCount}" name="Exercises[${exerciseCount - 1}].Name" required />
-                <label for="metricToMeasure${exerciseCount}">Metric To Measure:</label>
-                <input type="text" id="metricToMeasure${exerciseCount}" name="Exercises[${exerciseCount - 1}].MetricToMeasure" required />
+           
+                <h4 class="exercise-main-label">Exercise #${exerciseCount}</h4>
+                <label for="exerciseName${exerciseCount}" class="exercise-label">Name:</label>
+                <input type="text" id="exerciseName${exerciseCount}" name="Exercises[${exerciseCount - 1}].Name" class="exercise-input" required />
+                <label for="metricToMeasure${exerciseCount}" class="exercise-label">Metric To Measure:</label>
+                <input type="text" id="metricToMeasure${exerciseCount}" name="Exercises[${exerciseCount - 1}].MetricToMeasure" class="exercise-input" required />
             `;
             document.getElementById("exercises").appendChild(exerciseDiv);
         });
