@@ -1,0 +1,53 @@
+﻿.page-header-container {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px 5px;
+}
+
+.page-header {
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 66.667% */
+}
+
+.details-workout-list-container-container {
+    display: flex;
+    justify-content: center;
+}
+
+.details-workout-list-container {
+    width: 326px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px 10px 10px;
+    margin-bottom: 25px;
+}
+
+.workout-name-container {
+    background: #3C979F;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0px 10px;
+    margin: -10px -10px 0;
+}
+
+.workout-name {
+    color: white;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    padding-top: 10px;
+    -webkit-text-stroke-width: 0.25px;
+    -webkit-text-stroke-color: white;
+}
+
+.exercise-list {
+    padding-top: 10px;
+}

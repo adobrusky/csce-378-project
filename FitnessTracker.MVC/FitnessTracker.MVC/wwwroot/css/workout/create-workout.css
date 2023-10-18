@@ -115,6 +115,18 @@
     line-height: 20px; /* 105.263% */
     letter-spacing: -0.5px;
     text-align: center;
+    margin: 10px 0 5px;
+}
+
+.exercise-main-label-first {
+    color: black;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 105.263% */
+    letter-spacing: -0.5px;
+    text-align: center;
     margin: 35px 0 5px;
 }
 
@@ -141,6 +153,12 @@
     font-weight: 700;
     line-height: 20px; /* 111.111% */
     letter-spacing: -0.5px;
+}
+
+.exercise-border-bottom {
+    border-bottom: 1px solid #000;
+    padding-top: 20px;
+    width: 100%;
 }
 
 .add-exercise-button {

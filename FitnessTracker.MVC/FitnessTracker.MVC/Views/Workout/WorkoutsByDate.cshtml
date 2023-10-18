@@ -4,6 +4,7 @@
 
 @section css{
     <link rel="stylesheet" href="~/css/workout/workout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/workout/workouts-by-date.css" asp-append-version="true" />
 }
 
 @model List<WorkoutModel>
@@ -15,19 +16,26 @@
     </div>
 </div>
 
-<h2>@ViewBag.Date.ToString("dddd, MMMM dd")</h2>
-
-@foreach (WorkoutModel workout in Model)
-{
-    <div class="workout-list">
-        <h3>@workout.Name</h3>
-        <div>
-            <ul>
-                @foreach (ExerciseModel exercise in workout.Exercises)
-                {
-                    <li>@exercise.Name - @exercise.MetricToMeasure</li>
-                }
-            </ul>
-        </div>
-    </div>
-}
+<div class="page-header-container">
+    <h2 class="page-header">@ViewBag.Date.ToString("dddd")<br /> @ViewBag.Date.ToString("MMMM dd")</h2>
+</div>
+        @foreach (WorkoutModel workout in Model)
+        {
+            <div class="details-workout-list-container-container">
+                <div class="details-workout-list-container">
+                    <div class="details-workout-list">
+                        <div class="workout-name-container">
+                            <h3 class="workout-name">@workout.Name</h3>
+                        </div>
+                        <div class="exercise-list">
+                            <ul>
+                                @foreach (ExerciseModel exercise in workout.Exercises)
+                                {
+                                    <li class="exercise-item">@exercise.Name - @exercise.MetricToMeasure</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }

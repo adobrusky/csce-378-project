@@ -36,12 +36,13 @@
 
             <div id="exercises">
                 <div class="exercise">
-                    <h4 class="exercise-main-label">Exercise #1</h4>
+                    <h4 class="exercise-main-label-first">Exercise #1</h4>
                     <label for="exerciseName1" class="exercise-label">Name:</label>
                     <input type="text" id="exerciseName1" name="Exercises[0].Name" class="exercise-input" required/>
                     <label for="metricToMeasure1" class="exercise-label">Metric To Measure:</label>
                     <input type="text" id="metricToMeasure1" name="Exercises[0].MetricToMeasure" class="exercise-input" required/>
                 </div>
+                <div class="exercise-border-bottom"></div>
             </div>
 
             <button class="add-exercise-button" type="button" id="addExercise">Add Another Exercise</button>
@@ -67,6 +68,7 @@
                 <input type="text" id="exerciseName${exerciseCount}" name="Exercises[${exerciseCount - 1}].Name" class="exercise-input" required />
                 <label for="metricToMeasure${exerciseCount}" class="exercise-label">Metric To Measure:</label>
                 <input type="text" id="metricToMeasure${exerciseCount}" name="Exercises[${exerciseCount - 1}].MetricToMeasure" class="exercise-input" required />
+                <div class="exercise-border-bottom"></div>
             `;
             document.getElementById("exercises").appendChild(exerciseDiv);
         });
