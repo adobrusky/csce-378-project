@@ -175,6 +175,17 @@ namespace FitnessTracker.MVC.Helpers
                 _cache.Set(MyWorkoutsCacheKey, lstWorkouts);
             }
         }
+
+        public void RemoveWorkoutFromMyWorkouts(string workoutName, string category, DateTime dDate)
+        {
+            List<WorkoutModel> workouts = GetMyWorkouts();
+            var foundWorkout = workouts.FirstOrDefault(w => w.Name == workoutName && w.Category == category && w.Date == dDate);
+            if (foundWorkout != null)
+            {
+                workouts.Remove(foundWorkout);
+                _cache.Set(MyWorkoutsCacheKey, workouts);
+            }
+        }
     }
 
 }

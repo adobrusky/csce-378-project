@@ -30,13 +30,16 @@
 .workout-name-container {
     background: #3C979F;
     display: flex;
-    justify-content: center;
     padding: 5px 0px 10px;
     margin: -10px -10px 0;
 }
 
 .workout-name {
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     font-family: Poppins;
     font-size: 20px;
     font-style: normal;
@@ -44,10 +47,25 @@
     line-height: 20px; /* 100% */
     letter-spacing: 2px;
     padding-top: 10px;
+    margin-right: -37.5px;
     -webkit-text-stroke-width: 0.25px;
     -webkit-text-stroke-color: white;
 }
 
 .exercise-list {
     padding-top: 10px;
+}
+
+.remove-workout-button-container {
+    display: flex;
+    align-items: start;
+}
+
+.remove-workout-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0;
 }

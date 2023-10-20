@@ -66,6 +66,14 @@ namespace FitnessTracker.MVC.Controllers
         }
 
         [HttpPost]
+        public IActionResult RemoveWorkoutFromMyWorkouts(string workoutName, string category, DateTime dDate)
+        {
+            _cacheHelper.RemoveWorkoutFromMyWorkouts(workoutName, category, dDate);
+            TempData["SuccessMessage"] = workoutName + " has been successfully removed from " + dDate.ToString("dddd, MMMM dd") + "!";
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
         public IActionResult SaveWorkout(WorkoutModel oWorkout)
         {
             _cacheHelper.AddWorkoutToExistingWorkouts(oWorkout);
