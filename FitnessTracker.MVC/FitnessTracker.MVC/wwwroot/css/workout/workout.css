@@ -114,6 +114,10 @@
     font-size: 19px;
 }
 
+    .back > .save-workout-button {
+        color: #FFF;
+    }
+
 .success-box-margins {
     margin-top: 15px;
     margin-bottom: -30px;
