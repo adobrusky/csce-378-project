@@ -176,6 +176,7 @@ namespace FitnessTracker.MVC.Helpers
                 List<WorkoutModel> lstWorkouts = GetMyWorkouts();
                 lstWorkouts.Add(oWorkout);
                 _cache.Set(MyWorkoutsCacheKey, lstWorkouts);
+                UpdateOriginalWorkoutsCache(lstWorkouts);
             }
         }
 
@@ -187,6 +188,7 @@ namespace FitnessTracker.MVC.Helpers
             {
                 workouts.Remove(foundWorkout);
                 _cache.Set(MyWorkoutsCacheKey, workouts);
+                UpdateOriginalWorkoutsCache(workouts);
             }
         }
 
@@ -247,6 +249,11 @@ namespace FitnessTracker.MVC.Helpers
         {
             List<WorkoutModel> originalWorkouts = _cache.Get<List<WorkoutModel>>(OriginalMyWorkoutsCacheKey);
             _cache.Set(MyWorkoutsCacheKey, originalWorkouts);
+        }
+
+        private void UpdateOriginalWorkoutsCache(List<WorkoutModel> workouts)
+        {
+            _cache.Set(OriginalMyWorkoutsCacheKey, workouts);
         }
 
     }
