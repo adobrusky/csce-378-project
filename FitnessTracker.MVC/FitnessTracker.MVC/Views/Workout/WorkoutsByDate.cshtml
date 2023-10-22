@@ -26,7 +26,7 @@
                     <div class="details-workout-list">
                         <div class="workout-name-container">
                             <h3 class="workout-name">@workout.Name</h3>
-                            <form method="post" action="@Url.Action("RemoveWorkoutFromMyWorkouts", "Workout")">
+                    <form id="remove-workout-form" method="post" onsubmit="return confirmRemove()" action="@Url.Action("RemoveWorkoutFromMyWorkouts", "Workout")">
                                 <input type="hidden" name="workoutName" value="@workout.Name" />
                                 <input type="hidden" name="category" value="@workout.Category"/>
                                 <input type="hidden" name="dDate" value="@workout.Date"/>
@@ -49,3 +49,11 @@
                 </div>
             </div>
         }
+
+@section scripts {
+    <script type="text/javascript">
+        function confirmRemove() {
+            return confirm("Are you sure you want to remove this workout?");
+        }
+    </script>
+}
