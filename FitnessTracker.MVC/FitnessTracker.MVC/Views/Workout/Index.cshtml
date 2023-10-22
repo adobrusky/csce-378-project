@@ -11,9 +11,13 @@
 <div class="workout-header">
     <h1 style="font-weight: bold; font-size:27px;">My Workouts</h1>
     <div class="workout-header-btns">
-        <i class="fa-solid fa-filter fa-xl"></i>
-        <a href="@Url.Action("AddWorkout", "Workout")"><i class="fa-solid fa-circle-plus fa-xl"></i></a>
-    </div>
+        <a href="@Url.Action("FilterWorkouts", "Workout")">
+            <i class="fa-solid fa-filter fa-xl"></i>
+        </a>
+        <a href="@Url.Action("AddWorkout", "Workout")">
+            <i class="fa-solid fa-circle-plus fa-xl"></i>
+        </a>
+</div>
 </div>
 
 @if (TempData["SuccessMessage"] != null)

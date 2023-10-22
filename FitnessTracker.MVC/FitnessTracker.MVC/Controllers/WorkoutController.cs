@@ -1,6 +1,7 @@
 ﻿using FitnessTracker.MVC.Helpers;
 using FitnessTracker.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using System.Diagnostics;
 
 namespace FitnessTracker.MVC.Controllers
@@ -92,6 +93,28 @@ namespace FitnessTracker.MVC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult FilterWorkouts()
+        {
+            ViewBag.Categories = _cacheHelper.GetCategories();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ApplyFilters(string category, DateTime date1, DateTime date2)
+        {
+            _cacheHelper.ApplyFilters(category, date1, date2);
+            TempData["SuccessMessage"] = "Filters applied";
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult ClearFilters()
+        {
+            _cacheHelper.ClearFilters();
+            TempData["SuccessMessage"] = "Filters cleared";
+            return RedirectToAction("Index");
         }
     }
 }

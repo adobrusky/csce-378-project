@@ -1,5 +1,6 @@
 ﻿using FitnessTracker.MVC.Models;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.VisualBasic;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
@@ -12,6 +13,7 @@ namespace FitnessTracker.MVC.Helpers
         private string ExistingWorkoutsCacheKey(string sCategory) => $"ExistingWorkouts_{sCategory}";
         private const string CategoriesCacheKey = $"WorkoutCategories";
         private const string MyWorkoutsCacheKey = $"MyWorkouts";
+        private const string OriginalMyWorkoutsCacheKey = $"OriginalMyWorkouts"; // Add a new cache key for the original unfiltered list of workouts
 
         public CacheHelper(IMemoryCache cache)
         {
@@ -127,6 +129,7 @@ namespace FitnessTracker.MVC.Helpers
                 }
 
                 _cache.Set(MyWorkoutsCacheKey, lstInitialMyWorkouts);
+                _cache.Set(OriginalMyWorkoutsCacheKey, lstInitialMyWorkouts.Select(x => x.Clone()).ToList());  // Store a clone to ensure independence
             }
         }
 
@@ -186,6 +189,66 @@ namespace FitnessTracker.MVC.Helpers
                 _cache.Set(MyWorkoutsCacheKey, workouts);
             }
         }
+
+        public void ApplyFilters(string category, DateTime date1, DateTime date2)
+        {
+            List<WorkoutModel> originalWorkouts = _cache.Get<List<WorkoutModel>>(OriginalMyWorkoutsCacheKey);
+            _cache.Set(MyWorkoutsCacheKey, originalWorkouts);
+
+            List<WorkoutModel> workouts = GetMyWorkouts();
+            List<WorkoutModel> filteredWorkouts;
+
+            bool date1IsEmpty = (date1 == DateTime.MinValue);
+            bool date2IsEmpty = (date2 == DateTime.MinValue);
+
+            if (category == "All" && date1IsEmpty && date2IsEmpty)
+            {
+                filteredWorkouts = workouts;
+            }
+            else if (category == "All")
+            {
+                if (!date1IsEmpty && date2IsEmpty)
+                {
+                    filteredWorkouts = workouts.Where(w => w.Date >= date1).ToList();
+                }
+                else if (date1IsEmpty && !date2IsEmpty)
+                {
+                    filteredWorkouts = workouts.Where(w => w.Date <= date2).ToList();
+                }
+                else
+                {
+                    filteredWorkouts = workouts.Where(w => w.Date >= date1 && w.Date <= date2).ToList();
+                }
+            }
+            else if (date1IsEmpty && date2IsEmpty)
+            {
+                filteredWorkouts = workouts.Where(w => w.Category == category).ToList();
+            }
+            else
+            {
+                if (!date1IsEmpty && date2IsEmpty)
+                {
+                    filteredWorkouts = workouts.Where(w => w.Category == category && w.Date >= date1).ToList();
+                }
+                else if (date1IsEmpty && !date2IsEmpty)
+                {
+                    filteredWorkouts = workouts.Where(w => w.Category == category && w.Date <= date2).ToList();
+                }
+                else
+                {
+                    filteredWorkouts = workouts.Where(w => w.Category == category && w.Date >= date1 && w.Date <= date2).ToList();
+                }
+            }
+
+            _cache.Set(MyWorkoutsCacheKey, filteredWorkouts);
+        }
+
+        public void ClearFilters()
+        {
+            List<WorkoutModel> originalWorkouts = _cache.Get<List<WorkoutModel>>(OriginalMyWorkoutsCacheKey);
+            _cache.Set(MyWorkoutsCacheKey, originalWorkouts);
+        }
+
     }
 
 }
