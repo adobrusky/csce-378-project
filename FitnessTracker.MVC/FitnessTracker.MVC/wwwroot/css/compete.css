@@ -1,3 +1,115 @@
-﻿/* BEGIN COMPETE */
+﻿.my-groups-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+}
 
-/* END COMPETE */
+.my-groups-title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 20px; /* 57.143% */
+}
+
+.my-groups-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 258px;
+    height: 49px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+}
+
+.my-group-button {
+    margin-top: 16px;
+    width: 295px;
+    height: 48px;
+    border-radius: 5px;
+    background: #3C979F;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 95.238% */
+    letter-spacing: -0.5px;
+    border: none;
+    text-align: center;
+}
+
+.group-link {
+    color: #8696BB;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    text-align: center;
+    text-decoration: none;
+}
+
+.back-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.back {
+    width: 258px;
+    height: 49px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+    .back > a {
+        align-items: center;
+        color: #8696BB;
+        display: flex;
+        font-family: Poppins;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 700;
+        height: 100%;
+        justify-content: center;
+        line-height: normal;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .back > .smaller-text {
+        font-size: 19px;
+    }
+
+.green-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 344px;
+    height: 150px;
+    border-radius: 10px;
+    background: #AEFCD0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+    text-align: center;
+}
+
+.stat-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 49px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+}
