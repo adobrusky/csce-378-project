@@ -192,8 +192,8 @@ namespace FitnessTracker.MVC.Helpers
 
         public void ApplyFilters(string category, DateTime date1, DateTime date2)
         {
-            List<WorkoutModel> originalWorkouts = _cache.Get<List<WorkoutModel>>(OriginalMyWorkoutsCacheKey);
-            _cache.Set(MyWorkoutsCacheKey, originalWorkouts);
+            List<WorkoutModel> originalWorkouts = GetMyWorkouts();
+            _cache.Set(OriginalMyWorkoutsCacheKey, originalWorkouts);
 
             List<WorkoutModel> workouts = GetMyWorkouts();
             List<WorkoutModel> filteredWorkouts;
