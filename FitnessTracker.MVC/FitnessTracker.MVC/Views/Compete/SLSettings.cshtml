@@ -17,7 +17,7 @@
 
 <h1 class="page-header">Edit Group</h1>
 <div class="form-container-container">
-    <form method="post" action="@Url.Action("SaveWorkout", "Workout")">
+    <form method="post" action="@Url.Action("SaveSoccerLoversSettings", "Compete")">
         <div class="form-container">
             <div class="workout-name-container">
                 <label for="name">Change Group Name:</label>
@@ -46,10 +46,8 @@
             <button class="add-exercise-button" type="button" id="addScoreCondition">Add New Condition</button>
 
         </div>
-        <div class="save-button-container">
-            <div class="back">
-                <a class="save-workout-button"  href="@Url.Action("SoccerLovers", "Compete")">Confirm Changes</a>
-            </div>
+        <div class="save-settings-button-container">
+            <button class="save-settings-button">Save Settings</button>
         </div>
     </form>
 </div>

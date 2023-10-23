@@ -1,4 +1,5 @@
-﻿using FitnessTracker.MVC.Models;
+﻿using FitnessTracker.MVC.Helpers;
+using FitnessTracker.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -59,6 +60,27 @@ namespace FitnessTracker.MVC.Controllers
         public IActionResult WLSettings()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult SaveSoccerLoversSettings()
+        {
+            TempData["SuccessMessage"] = "Settings successfully saved!";
+            return RedirectToAction("SoccerLovers");
+        }
+
+        [HttpPost]
+        public IActionResult SaveWeightLiftersSettings()
+        {
+            TempData["SuccessMessage"] = "Settings successfully saved!";
+            return RedirectToAction("WeightLifters");
+        }
+
+        [HttpPost] 
+        public IActionResult SaveOutdoorRunnersSettings()
+        {
+            TempData["SuccessMessage"] = "Settings successfully saved!";
+            return RedirectToAction("OutdoorRunners");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
