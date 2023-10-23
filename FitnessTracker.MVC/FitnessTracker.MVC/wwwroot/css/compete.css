@@ -1,31 +1,11 @@
-﻿jk.my-groups-content {
+﻿.my-groups-content {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 60px;
 }
-.save-settings-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px 0 50px;
-}
 
-.save-settings-button {
-    width: 295px;
-    height: 48px;
-    border-radius: 5px;
-    background: #3C979F;
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px; /* 95.238% */
-    letter-spacing: -0.5px;
-    border: none;
-}
 .my-groups-title {
     color: #000;
     font-family: Poppins;
@@ -265,3 +245,24 @@
         -webkit-text-stroke-color: white;
     }
 
+.save-settings-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 50px;
+}
+
+.save-settings-button {
+    width: 295px;
+    height: 48px;
+    border-radius: 5px;
+    background: #3C979F;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 95.238% */
+    letter-spacing: -0.5px;
+    border: none;
+}
