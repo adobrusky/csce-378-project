@@ -19,28 +19,30 @@
 <div class="form-container-container">
     <form method="post" action="@Url.Action("SaveOutdoorRunnersSettings", "Compete")">
         <div class="form-container">
-            <div class="workout-name-container">
-                <label for="name">Change Group Name:</label>
-                <input type="text" id="name" name="Name" />
+            <div class="change-group-name-container">
+                <label for="name" class="category-label">Change Group Name:</label>
+                <input type="text" id="name" name="Name" class="name-input-box" required />
             </div>
 
             <div class="scoring-settings-container">
                 <label for="category" class="category-label">Condition to Earn Points</label>
             </div>
 
-            <div class="workout-completed-container">
-                <input type="checkbox" id="work" name="workoutCompleted">
-                <label for="work"> Workouts Completed</label><br>
-            </div>
+            <div class="condition-choices-container">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="work" name="workoutCompleted">
+                    <label for="work"> Workouts Completed</label><br>
+                </div>
 
-            <div class="time-spent-container">
-                <input type="checkbox" id="time" name="timeSpent">
-                <label for="time"> Time Spent Working Out</label><br>
-            </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="time" name="timeSpent">
+                    <label for="time"> Time Spent Working Out</label><br>
+                </div>
 
-            <div class="calories-burned-container">
-                <input type="checkbox" id="cal" name="caloriesBurned">
-                <label for="cal"> Calories Burned</label><br>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="cal" name="caloriesBurned">
+                    <label for="cal"> Calories Burned</label><br>
+                </div>
             </div>
 
             <button class="add-exercise-button" type="button" id="addScoreCondition">Add New Condition</button>

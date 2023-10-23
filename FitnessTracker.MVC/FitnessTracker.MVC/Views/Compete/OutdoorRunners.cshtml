@@ -16,9 +16,11 @@
 
 @if (TempData["SuccessMessage"] != null)
 {
-    <div class="alert alert-success alert-dismissible fade show success-box-margins" role="alert">
-        @TempData["SuccessMessage"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="success-message-container">
+        <div class="alert alert-success alert-dismissible fade show success-box-margins" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     </div>
 }
 
@@ -47,7 +49,7 @@
     <div class="my-groups-box">
         <a class="group-link" href="@Url.Action("ORSettings", "Compete")">Edit Group</a>
     </div>
-    <div class="my-groups-box">
+    <div class="my-groups-box leave-group-box">
         <label class="group-link">Leave Group</label>
     </div>
 </div>
